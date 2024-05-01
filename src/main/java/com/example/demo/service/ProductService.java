@@ -26,4 +26,12 @@ public class ProductService {
         repository.findProductsCategories(list.stream().collect(Collectors.toList()));
         return list.map(ProductDTO::new);
     }
+
+
+//    Esse método faz o mesmo que o de cima porém usando EntityGraph.
+//    @Transactional(readOnly = true)
+//    public Page<ProductDTO> find(PageRequest pageRequest) {
+//        Page<Product> list = repository.findAll(pageRequest);
+//        return list.map(ProductDTO::new);
+//    }
 }
